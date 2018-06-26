@@ -13,7 +13,7 @@ ReactDOM.render((
 
   <HashRouter>
     <Switch>
-        <Route path="/institutions" component={App}/>
+        <Route path="/" component={App}/>
         <Route path="*" component={NoMatch}/>
     </Switch>
   </HashRouter>), 

@@ -33,7 +33,7 @@ public class BookService {
 			bfk.setAuthor(book.getAuthor());
 			bfk.setNumberOfPages(book.getNumberOfPages());
 			// bfk.setBookPhoto(book.getBookPhoto);
-			bfk.setAssignationId(book.getAssignation().getAssignationId());
+			//bfk.setAssignationId(book.getAssignation().getAssignationId());
 			return bfk;
 		}).collect(Collectors.toList());
 		return booksForClient;
@@ -47,7 +47,7 @@ public class BookService {
 		bfk.setAuthor(book.getAuthor());
 		bfk.setNumberOfPages(book.getNumberOfPages());
 		// bfk.setBookPhoto(book.getBookPhoto());
-		bfk.setAssignationId(book.getAssignation().getAssignationId());
+		//bfk.setAssignationId(book.getAssignation().getAssignationId());
 		return bfk;
 	}
 

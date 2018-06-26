@@ -1,0 +1,25 @@
+#infoIcon, #editIcon{
+    font-size:18px;
+    color:#26a6fc;
+    margin-right:5px;
+}
+
+#deleteIcon{
+    font-size:18px;
+    color:red;
+}
+
+#addNewIcon-top{
+    font-size:24px;
+    color:#26a6fc;
+    float: right;
+    margin-top: 70px;
+    margin-bottom: 10px
+}
+
+#addNewIcon-bottom{
+    font-size:24px;
+    color:#26a6fc;
+    float: right;
+    margin-top: 10px;
+}

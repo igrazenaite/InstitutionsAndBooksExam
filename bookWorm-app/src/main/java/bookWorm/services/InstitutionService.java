@@ -49,7 +49,7 @@ public class InstitutionService {
 		inst.setCategory(institution.getCategory());
 		inst.setInstitutionType(institution.getInstitutionType());
 		inst.setSubcategory(institution.getSubcategory());
-		inst.setAssignationId(institution.getAssignation().getAssignationId());
+		//inst.setAssignationId(institution.getAssignation().getAssignationId());
 		return inst;
 	}
 

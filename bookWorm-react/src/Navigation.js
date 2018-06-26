@@ -1,8 +1,10 @@
 import { Route, Switch } from 'react-router-dom';
 import React, { Component } from 'react';
-//import NewInstitutionRegistration from './Institutions/NewInstitutionRegistration';
 import InstitutionTableContainer from './Institutions/InstitutionTableContainer';
-//import NewBookRegistration from './Books/NewBookRegistration';
+import BookTableContainer from './Books/BookTableContainer';
+import InstitutionInfoContainer from './Institutions/InstitutionInfoContainer';
+import NewInstitutionForm from './Institutions/NewInstitutionForm';
+import NewBookForm from './Books/NewBookForm';
 //import NewAssignation from './Assignation/NewAssignation';
 //import UpdateInstitution from './Institution/UpdateInstitution';
 //import UpdateBook from './Books/UpdateBook';
@@ -15,9 +17,11 @@ class Navigation extends Component{
             <main>
                 <Switch>
                     <Route path="/institutions" component={InstitutionTableContainer}/>
-                    {/* <Route path="/newInstitution" component={NewInstitutionRegistration}/>
-                    <Route path="/newBook" component={NewBookRegistration}/>
-                    <Route path="/newAssignation" component={NewAssignation}/>
+                    <Route path="/books" component={BookTableContainer}/>
+                    <Route path="/singleInstitution/:institutionId" component={InstitutionInfoContainer}/>
+                    <Route path="/newInstitution" component={NewInstitutionForm}/>
+                    <Route path="/newBook" component={NewBookForm}/>
+                    {/*<Route path="/newAssignation" component={NewAssignation}/>
                     <Route path="/singleInstitution/:institutionId" component={UpdateInstitution}/>
                     <Route path="/singleBook/:bookId" component={UpdateBook}/>
                     <Route path="/singleAssignation/update/:assignationId" component={AssignBookToInstitution}/> */}

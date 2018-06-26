@@ -1,26 +1,25 @@
 import React, {Component} from 'react';
 import { Link } from 'react-router-dom';
-import InstitutionTableComponent from './InstitutionTableComponent';
+import BookTableComponent from './BookTableComponent';
 import axios from 'axios';
 import '../Style/NavBarStyle.css';
 import '../Style/Icons.css';
 
-class InstitutionTableContainer extends Component{
+class BookTableContainer extends Component{
     constructor() {
         super();
 
         this.state = {
-            institutions: [],
-            institutionInfo: []
+            books: []
         }
     }
 
     componentWillMount(){
         axios
-            .get("http://localhost:8081/institutions")
+            .get("http://localhost:8081/books")
             .then((response) => {
                 console.log(response);
-                this.setState({institutions: response.data});
+                this.setState({books: response.data});
             })
             .catch((error) => {
                 console.log(error);
@@ -28,31 +27,29 @@ class InstitutionTableContainer extends Component{
     }
     
     render (){
-        console.log("table inst id ", this.state.institutionId);
-        console.log("table inst info ", this.state.institutionInfo);
         return (
         <div>
-            <nav className="navbar navbar-inverse navbar-fixed-top"  id="navbar">
+            <nav className="navbar navbar-inverse navbar-fixed-top" id="navbarbooks">
                 <div className="container-fluid">
                     <div className="navbar-header">
                         <a className="navbar-brand">Institucijos</a>
                     </div>
                         <ul className="nav navbar-nav">
-                            <li className="active"><Link to={"/institutions"} >Institucijų sąrašas</Link></li>
-                            <li><Link to={"/books"}>Knygų sąrašas</Link></li>
+                            <li><Link to={"/institutions"}>Institucijų sąrašas</Link></li>
+                            <li className="active"><Link to={"/books"}>Knygų sąrašas</Link></li>
                         </ul>
                 </div>
             </nav>
             <div className="container">
-                <Link to={"/newInstitution"} >
+                <Link to={"/newBook"} >
                     <span className="glyphicon glyphicon-plus-sign" id="addNewIcon-top" ></span>
                 </Link>
             </div>
             <div className="container">
-                <InstitutionTableComponent allInstitutions={this.state.institutions}/>
+                <BookTableComponent allBooks={this.state.books}/>
             </div>
             <div className="container">
-                <Link to={"/newInstitution"} >
+                <Link to={"/newBook"} >
                     <span className="glyphicon glyphicon-plus-sign" id="addNewIcon-bottom" ></span>
                 </Link>
             </div>
@@ -61,4 +58,4 @@ class InstitutionTableContainer extends Component{
     }
 }
 
-export default InstitutionTableContainer;
+export default BookTableContainer;
